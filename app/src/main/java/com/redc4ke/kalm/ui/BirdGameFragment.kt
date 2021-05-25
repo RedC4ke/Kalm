@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.DecelerateInterpolator
+import com.redc4ke.kalm.R
 import com.redc4ke.kalm.databinding.FragmentBirdGameBinding
 import com.redc4ke.kalm.ui.base.BaseFragment
 import nl.dionsegijn.konfetti.models.Shape
@@ -98,21 +99,7 @@ class BirdGameFragment : BaseFragment<FragmentBirdGameBinding>() {
                             score += 1
 
                             if (score == 3) {
-                                binding.birdGameConfetti.build()
-                                    .addColors(Color.YELLOW, Color.GREEN, Color.MAGENTA)
-                                    .setDirection(0.0, 359.0)
-                                    .setSpeed(1f, 5f)
-                                    .setFadeOutEnabled(true)
-                                    .setTimeToLive(2000L)
-                                    .addShapes(Shape.Square, Shape.Circle)
-                                    .addSizes(Size(12))
-                                    .setPosition(
-                                        -50f,
-                                        binding.birdGameConfetti.width + 50f,
-                                        -50f,
-                                        -50f
-                                    )
-                                    .streamFor(300, 5000L)
+                                winner()
                             }
 
                             true
@@ -154,9 +141,31 @@ class BirdGameFragment : BaseFragment<FragmentBirdGameBinding>() {
         ObjectAnimator.ofFloat(binding.birdgameTitleCV, "translationY", 70f)
             .apply {
                 interpolator = DecelerateInterpolator()
-                duration = 700
+                duration = 1100
                 start()
             }
+    }
+
+    private fun winner() {
+
+        binding.birdGameConfetti.build()
+            .addColors(Color.YELLOW, Color.GREEN, Color.MAGENTA)
+            .setDirection(0.0, 359.0)
+            .setSpeed(1f, 5f)
+            .setFadeOutEnabled(true)
+            .setTimeToLive(2000L)
+            .addShapes(Shape.Square, Shape.Circle)
+            .addSizes(Size(12))
+            .setPosition(
+                -50f,
+                binding.birdGameConfetti.width + 50f,
+                -50f,
+                -50f
+            )
+            .streamFor(300, 5000L)
+
+        CompletedFragment(getString(R.string.birdgame_completed))
+            .show(parentFragmentManager, "complete")
     }
 
     private data class Bird(val view: View, val color: String)

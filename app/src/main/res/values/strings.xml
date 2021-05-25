@@ -10,5 +10,13 @@
 
     <!-- birds -->
     <string name="birdgame_title">Save the birdies!</string>
+    <string name="birdgame_completed">You are truly a bird-saver</string>
+
+    <!-- completed -->
+    <string name="completed">Congratulations!</string>
+    <string name="completed_stat_taskscurrent">Tasks this run: </string>
+    <string name="completed_stat_taskstotal">Tasks total: </string>
+    <string name="completed_stat_launches">App launches: </string>
+    <string name="completed_forward">Onward!</string>
 
 </resources>
