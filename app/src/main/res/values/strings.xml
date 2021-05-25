@@ -7,4 +7,8 @@
     <string name="land_panik">Panik?</string>
     <string name="land_kalm">Kalm.</string>
     <string name="land_info">Kalm. v0.0.1 \nRedc4ke 2021</string>
+
+    <!-- birds -->
+    <string name="birdgame_title">Save the birdies!</string>
+
 </resources>

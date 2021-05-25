@@ -16,13 +16,16 @@ class LandingFragment : BaseFragment<FragmentLandingBinding>() {
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentLandingBinding
         get() = FragmentLandingBinding::inflate
+    private val destinationList = arrayListOf(
+        R.id.action_BirdGame
+    )
 
     override fun onStart() {
         super.onStart()
 
         binding.landingPlayIV.setOnClickListener {
             buttonHide()
-            findNavController().navigate(R.id.action_landingFragment_to_birdGameFragment)
+            findNavController().navigate(destinationList.random())
         }
     }
 

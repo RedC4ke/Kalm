@@ -11,13 +11,12 @@
         android:label="fragment_landing"
         tools:layout="@layout/fragment_landing" >
         <action
-            android:id="@+id/action_landingFragment_to_birdGameFragment"
-            app:destination="@id/birdGameFragment"
-            app:enterAnim="@android:anim/slide_in_left"
-            app:exitAnim="@android:anim/slide_out_right" />
+            android:id="@+id/action_BirdGame"
+            app:destination="@id/birdGameFragment2" />
     </fragment>
     <fragment
-        android:id="@+id/birdGameFragment"
+        android:id="@+id/birdGameFragment2"
         android:name="com.redc4ke.kalm.ui.BirdGameFragment"
-        android:label="BirdGameFragment" />
+        android:label="fragment_bird_game"
+        tools:layout="@layout/fragment_bird_game" />
 </navigation>

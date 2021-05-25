@@ -8,13 +8,13 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
-                  <entry key="birdGameFragment">
+                  <entry key="birdGameFragment2">
                     <value>
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="279" />
-                            <option name="y" value="14" />
+                            <option name="x" value="260" />
+                            <option name="y" value="15" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -31,7 +31,7 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="action_landingFragment_to_birdGameFragment">
+                            <entry key="Action_BirdGame">
                               <value>
                                 <LayoutPositions />
                               </value>
