@@ -1,5 +1,22 @@
 <resources>
     <string name="app_name">Kalm</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="title_activity_main">MainActivity</string>
+
+    <!-- landing -->
+    <string name="land_panik">Panik?</string>
+    <string name="land_kalm">Kalm.</string>
+    <string name="land_info">Kalm. v0.0.1 \nRedc4ke 2021</string>
+
+    <!-- birds -->
+    <string name="birdgame_title">Save the birdies!</string>
+    <string name="birdgame_completed">You are truly a bird-saver</string>
+
+    <!-- completed -->
+    <string name="completed">Congratulations!</string>
+    <string name="completed_stat_taskscurrent">Tasks this run: </string>
+    <string name="completed_stat_taskstotal">Tasks total: </string>
+    <string name="completed_stat_launches">App launches: </string>
+    <string name="completed_forward">Onward!</string>
+
 </resources>

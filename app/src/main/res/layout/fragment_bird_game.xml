@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.BirdGameFragment">
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:src="@drawable/mockup_park"
+        android:scaleType="centerCrop"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="487dp"
+            android:layout_height="619dp"
+            android:layout_marginStart="100dp"
+            android:src="@drawable/mockup_tree"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.142" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/birdgameNestRedIV"
+                android:layout_width="78dp"
+                android:layout_height="78dp"
+                android:layout_marginTop="132dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/mockup_nest"
+                android:tint="#4DE53935"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/birdgameNestBlueIV"
+                android:layout_width="78dp"
+                android:layout_height="78dp"
+                android:layout_marginTop="192dp"
+                android:layout_marginEnd="120dp"
+                android:src="@drawable/mockup_nest"
+                android:tint="#4D039BE5"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/birdgameNestYellowIV"
+                android:layout_width="78dp"
+                android:layout_height="78dp"
+                android:layout_marginTop="280dp"
+                android:layout_marginEnd="40dp"
+                android:src="@drawable/mockup_nest"
+                android:tint="#4DFDD835"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/birdgameFakeNestRedIV"
+                android:layout_width="78dp"
+                android:layout_height="78dp"
+                android:layout_marginTop="132dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/mockup_nest"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/birdgameFakeNestBlueIV"
+                android:layout_width="78dp"
+                android:layout_height="78dp"
+                android:layout_marginTop="192dp"
+                android:layout_marginEnd="120dp"
+                android:src="@drawable/mockup_nest"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/birdgameFakeNestYellowIV"
+                android:layout_width="78dp"
+                android:layout_height="78dp"
+                android:layout_marginTop="280dp"
+                android:layout_marginEnd="40dp"
+                android:src="@drawable/mockup_nest"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:translationX="-80dp"
+                android:translationY="80dp"
+                app:cardCornerRadius="80dp"
+                app:cardElevation="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/birdgameCircleBarLeftIV"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:src="@drawable/mockup_circlebar" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/birdgameTitleCV"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                app:cardCornerRadius="36dp"
+                app:cardElevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:translationY="-70dp">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="18dp"
+                    android:layout_marginEnd="18dp"
+                    android:fontFamily="@font/gloria_hallelujah"
+                    android:text="@string/birdgame_title"
+                    android:textAlignment="viewStart"
+                    android:textColor="#C9000000"
+                    android:textSize="36dp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/birdgameBirdRedIV"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginBottom="124dp"
+                android:src="@drawable/mockup_bird"
+                android:tint="#E53935"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.102"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/birdgameFakeBirdRedIV"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="24dp"
+                android:src="@drawable/mockup_bird"
+                android:tint="#E53935"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/birdgameNestRedIV"
+                app:layout_constraintStart_toStartOf="@+id/birdgameNestRedIV"
+                tools:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/birdgameBirdYellowIV"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginBottom="52dp"
+                android:rotationY="180"
+                android:src="@drawable/mockup_bird"
+                android:tint="#FFB300"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.545"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/birdgameFakeBirdYellowIV"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="24dp"
+                android:rotationY="180"
+                android:src="@drawable/mockup_bird"
+                android:tint="#FFB300"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/birdgameNestYellowIV"
+                app:layout_constraintStart_toStartOf="@+id/birdgameNestYellowIV"
+                tools:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/birdgameBirdBlueIV"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginBottom="160dp"
+                android:src="@drawable/mockup_bird"
+                android:tint="#039BE5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.75"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/birdgameFakeBirdBlueIV"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="16dp"
+                android:src="@drawable/mockup_bird"
+                android:tint="#039BE5"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/birdgameNestBlueIV"
+                app:layout_constraintStart_toStartOf="@+id/birdgameNestBlueIV"
+                tools:visibility="visible" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <nl.dionsegijn.konfetti.KonfettiView
+        android:id="@+id/birdGameConfetti"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:visibility="gone" />
+
+</FrameLayout>
