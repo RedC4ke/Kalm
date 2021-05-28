@@ -29,3 +29,9 @@ abstract class BaseFragment<VB: ViewBinding>: Fragment() {
         _binding = null
     }
 }
+
+abstract class GameFragment<VB: ViewBinding> : BaseFragment<VB>() {
+
+    abstract val directions: Array<Int>
+
+}
