@@ -2,6 +2,7 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
     <color name="primary">#81d3f9</color>
     <color name="primary_light">#B6FFFF</color>
+    <color name="secondary">#b9f6ca</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>

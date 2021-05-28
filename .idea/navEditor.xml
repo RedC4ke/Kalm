@@ -13,8 +13,20 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="260" />
-                            <option name="y" value="15" />
+                            <option name="x" value="283" />
+                            <option name="y" value="-121" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="drawGameFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="276" />
+                            <option name="y" value="190" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -31,7 +43,7 @@
                         </option>
                         <option name="myPositions">
                           <map>
-                            <entry key="Action_BirdGame">
+                            <entry key="action_BirdGame">
                               <value>
                                 <LayoutPositions />
                               </value>

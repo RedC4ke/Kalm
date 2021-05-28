@@ -13,10 +13,25 @@
         <action
             android:id="@+id/action_BirdGame"
             app:destination="@id/birdGameFragment2" />
+        <action
+            android:id="@+id/action_DrawGame"
+            app:destination="@id/drawGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/birdGameFragment2"
         android:name="com.redc4ke.kalm.ui.BirdGameFragment"
         android:label="fragment_bird_game"
-        tools:layout="@layout/fragment_bird_game" />
+        tools:layout="@layout/fragment_bird_game" >
+        <action
+            android:id="@+id/action_BirdGame_DrawGame"
+            app:destination="@id/drawGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/drawGameFragment"
+        android:name="com.redc4ke.kalm.ui.DrawGameFragment"
+        android:label="DrawGameFragment" >
+        <action
+            android:id="@+id/action_DrawGame_BirdGame"
+            app:destination="@id/birdGameFragment2" />
+    </fragment>
 </navigation>

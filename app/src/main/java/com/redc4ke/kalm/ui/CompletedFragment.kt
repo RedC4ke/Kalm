@@ -1,6 +1,5 @@
 package com.redc4ke.kalm.ui
 
-import android.R
 import android.content.Context
 import android.os.Bundle
 import android.util.TypedValue
