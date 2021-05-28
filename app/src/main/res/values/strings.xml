@@ -12,6 +12,14 @@
     <string name="birdgame_title">Save the birdies!</string>
     <string name="birdgame_completed">You are truly a bird-saver</string>
 
+    <!-- drawing -->
+    <string-array name="drawgame_title">
+        <item>Draw a dinosaur</item>
+        <item>Draw a sun</item>
+        <item>Draw an egg</item>
+        <item>Draw a rocket</item>
+    </string-array>
+
     <!-- completed -->
     <string name="completed">Congratulations!</string>
     <string name="completed_stat_taskscurrent">Tasks this run: </string>
