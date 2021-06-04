@@ -19,20 +19,11 @@ class DrawGameFragment : BaseFragment<FragmentDrawGameBinding>() {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentDrawGameBinding
         get() = FragmentDrawGameBinding::inflate
     private lateinit var titles: Array<String>
-    private lateinit var currentPaint: Paint
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         titles = resources.getStringArray(R.array.drawgame_title)
-        currentPaint = Paint().apply {
-            isAntiAlias = true
-            color = 0x00000000
-            style = Paint.Style.STROKE
-            strokeJoin = Paint.Join.ROUND
-            strokeCap = Paint.Cap.ROUND
-            strokeWidth = 15f
-        }
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -42,15 +33,6 @@ class DrawGameFragment : BaseFragment<FragmentDrawGameBinding>() {
         binding.drawgameTitleTV.text = titles.random()
         showTitle()
 
-        binding.drawgameCanvasIV.setOnTouchListener { v, event ->
-
-            var lx = event.x
-            var ly = event.y
-
-            v.invalidate()
-
-            true
-        }
     }
 
 
