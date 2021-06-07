@@ -1,5 +1,6 @@
 package com.redc4ke.kalm.ui.drawgame
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
@@ -11,11 +12,11 @@ import com.redc4ke.kalm.R
 import kotlin.math.abs
 
 private const val STROKE_WIDTH = 12f
+private const val ERASER_WIDTH = 50f
 
-class MyCanvasView(context: Context) : View(context) {
+class MyCanvasView(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
-    constructor(context: Context, attrs: AttributeSet) : this(context)
-    constructor(context: Context, attrs: AttributeSet, defStyle: Int) : this(context)
+    constructor(context: Context, attrs: AttributeSet, defStyle: Int) : this(context, attrs)
 
     private lateinit var extraCanvas: Canvas
     private lateinit var extraBitmap: Bitmap
@@ -23,7 +24,7 @@ class MyCanvasView(context: Context) : View(context) {
         ResourcesCompat.getColor(resources, R.color.transparent, null)
     private var drawColor =
         ResourcesCompat.getColor(resources, R.color.black, null)
-    private val paint = Paint().apply {
+    private val drawingPaint = Paint().apply {
         color = drawColor
         isAntiAlias = true
         isDither = true
@@ -32,6 +33,14 @@ class MyCanvasView(context: Context) : View(context) {
         strokeCap = Paint.Cap.ROUND
         strokeWidth = STROKE_WIDTH
     }
+    private val eraser = Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        color = Color.TRANSPARENT
+        xfermode = PorterDuffXfermode(PorterDuff.Mode.CLEAR)
+        style = Paint.Style.STROKE
+        strokeWidth = ERASER_WIDTH
+        isAntiAlias = true
+    }
+    private var currentPaint = drawingPaint
     private var path = Path()
     private var motionTouchEventX = 0f
     private var motionTouchEventY = 0f
@@ -54,6 +63,7 @@ class MyCanvasView(context: Context) : View(context) {
         canvas?.drawBitmap(extraBitmap, 0f , 0f, null)
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         motionTouchEventX = event?.x ?: 0f
         motionTouchEventY = event?.y ?: 0f
@@ -83,13 +93,36 @@ class MyCanvasView(context: Context) : View(context) {
                 (motionTouchEventX + currentX) /2, (motionTouchEventY + currentY) / 2)
             currentX = motionTouchEventX
             currentY = motionTouchEventY
-            extraCanvas.drawPath(path, paint)
+            extraCanvas.drawPath(path, currentPaint)
         }
         invalidate()
     }
 
     private fun touchUp() {
         path.reset()
+    }
+
+    fun changePaint(color: String) {
+        when (color) {
+            "eraser" -> {
+                currentPaint = eraser
+            }
+            "green" -> {
+                currentPaint = drawingPaint
+                currentPaint.color =
+                    ResourcesCompat.getColor(resources, R.color.secondary, null)
+            }
+            "blue" -> {
+                currentPaint = drawingPaint
+                currentPaint.color =
+                    ResourcesCompat.getColor(resources, R.color.primary, null)
+            }
+            "black" -> {
+                currentPaint = drawingPaint
+                currentPaint.color =
+                    ResourcesCompat.getColor(resources, R.color.black, null)
+            }
+        }
     }
 
 }

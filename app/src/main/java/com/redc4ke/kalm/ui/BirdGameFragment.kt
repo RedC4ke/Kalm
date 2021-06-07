@@ -168,7 +168,7 @@ class BirdGameFragment : GameFragment<FragmentBirdGameBinding>() {
             .streamFor(300, 5000L)
 
         CompletedFragment(getString(R.string.birdgame_completed), this)
-            .show(parentFragmentManager, "complete")
+            .show(parentFragmentManager, "completed")
     }
 
     private data class Bird(val view: View, val color: String)

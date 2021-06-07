@@ -34,6 +34,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/drawgameCompletedBT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:translationX="80dp"
@@ -97,12 +98,13 @@
         app:srcCompat="@drawable/mockup_canvas" />
 
     <com.redc4ke.kalm.ui.drawgame.MyCanvasView
+        android:id="@+id/drawgameCanvasCV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -126,10 +128,9 @@
             android:paddingEnd="82dp">
 
             <ImageView
-                android:id="@+id/imageView12"
+                android:id="@+id/drawgameEraserBT"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
-                android:layout_marginTop="2dp"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/mockup_eraser_colored" />
 
@@ -139,6 +140,7 @@
                 android:layout_weight="1">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/drawgameGreenBT"
                     android:layout_width="46dp"
                     android:layout_height="46dp"
                     android:layout_gravity="center"
@@ -154,6 +156,7 @@
                 android:layout_weight="1">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/drawgameBlueBT"
                     android:layout_width="46dp"
                     android:layout_height="46dp"
                     android:layout_gravity="center"
@@ -169,6 +172,7 @@
                 android:layout_weight="1">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/drawgameBlackBT"
                     android:layout_width="46dp"
                     android:layout_height="46dp"
                     android:layout_gravity="center"
@@ -179,6 +183,17 @@
             </FrameLayout>
 
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
+
+    <nl.dionsegijn.konfetti.KonfettiView
+        android:id="@+id/drawgameConfettiKV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,5 +33,12 @@
         <action
             android:id="@+id/action_DrawGame_BirdGame"
             app:destination="@id/birdGameFragment2" />
+        <action
+            android:id="@+id/action_DrawGame_FindGame"
+            app:destination="@id/findGameFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/findGameFragment"
+        android:name="com.redc4ke.kalm.ui.FindGameFragment"
+        android:label="FindGameFragment" />
 </navigation>

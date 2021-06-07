@@ -47,6 +47,8 @@ class CompletedFragment(private val header: String, private val gameFragment: Ga
         binding.completedBGMiddleCL.bringToFront()
         binding.comppletedBGHeadCL.bringToFront()
 
+        binding.completedHeaderTV.text = header
+
         binding.completedOnwardTV.setOnClickListener {
 
             dismiss()
