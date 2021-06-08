@@ -2,6 +2,7 @@ package com.redc4ke.kalm.ui
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
@@ -10,11 +11,14 @@ import android.view.WindowManager
 import androidx.compose.animation.core.Spring
 import androidx.dynamicanimation.animation.DynamicAnimation
 import androidx.dynamicanimation.animation.SpringAnimation
+import androidx.navigation.fragment.findNavController
 import com.redc4ke.kalm.databinding.FragmentCompletedBinding
 import com.redc4ke.kalm.ui.base.BaseDialogFragment
+import com.redc4ke.kalm.ui.base.GameFragment
 
 
-class CompletedFragment(header: String) : BaseDialogFragment<FragmentCompletedBinding>() {
+class CompletedFragment(private val header: String, private val gameFragment: GameFragment<*>) :
+    BaseDialogFragment<FragmentCompletedBinding>() {
 
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentCompletedBinding
@@ -42,6 +46,15 @@ class CompletedFragment(header: String) : BaseDialogFragment<FragmentCompletedBi
 
         binding.completedBGMiddleCL.bringToFront()
         binding.comppletedBGHeadCL.bringToFront()
+
+        binding.completedHeaderTV.text = header
+
+        binding.completedOnwardTV.setOnClickListener {
+
+            dismiss()
+            gameFragment.findNavController().navigate(gameFragment.directions.random())
+
+        }
 
         animate()
     }

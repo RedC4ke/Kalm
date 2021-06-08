@@ -13,17 +13,20 @@ import android.view.ViewGroup
 import android.view.animation.DecelerateInterpolator
 import com.redc4ke.kalm.R
 import com.redc4ke.kalm.databinding.FragmentBirdGameBinding
-import com.redc4ke.kalm.ui.base.BaseFragment
+import com.redc4ke.kalm.ui.base.GameFragment
 import nl.dionsegijn.konfetti.models.Shape
 import nl.dionsegijn.konfetti.models.Size
 
-class BirdGameFragment : BaseFragment<FragmentBirdGameBinding>() {
+class BirdGameFragment : GameFragment<FragmentBirdGameBinding>() {
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentBirdGameBinding
         get() = FragmentBirdGameBinding::inflate
     private var draggedView: View? = null
     private var draggedColor: String? = null
     private var score = 0
+    override val directions = arrayOf(
+        R.id.action_BirdGame_DrawGame
+    )
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -164,8 +167,8 @@ class BirdGameFragment : BaseFragment<FragmentBirdGameBinding>() {
             )
             .streamFor(300, 5000L)
 
-        CompletedFragment(getString(R.string.birdgame_completed))
-            .show(parentFragmentManager, "complete")
+        CompletedFragment(getString(R.string.birdgame_completed), this)
+            .show(parentFragmentManager, "completed")
     }
 
     private data class Bird(val view: View, val color: String)

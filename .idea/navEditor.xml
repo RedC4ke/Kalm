@@ -17,6 +17,15 @@
                             <option name="y" value="-121" />
                           </Point>
                         </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_BirdGame_DrawGame">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
                       </LayoutPositions>
                     </value>
                   </entry>
@@ -27,6 +36,27 @@
                           <Point>
                             <option name="x" value="276" />
                             <option name="y" value="190" />
+                          </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_DrawGame_BirdGame">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="findGameFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="277" />
+                            <option name="y" value="499" />
                           </Point>
                         </option>
                       </LayoutPositions>
@@ -44,6 +74,11 @@
                         <option name="myPositions">
                           <map>
                             <entry key="action_BirdGame">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_DrawGame">
                               <value>
                                 <LayoutPositions />
                               </value>

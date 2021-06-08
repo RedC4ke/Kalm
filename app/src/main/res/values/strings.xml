@@ -19,6 +19,11 @@
         <item>Draw an egg</item>
         <item>Draw a rocket</item>
     </string-array>
+    <string name="drawgame_completed">Your creation is a masterpiece</string>
+
+    <!-- find a dog -->
+    <string name="findgame_title">Find all doggos!</string>
+    <string name="findgame_completed">Heck, you are eagle-eyed!</string>
 
     <!-- completed -->
     <string name="completed">Congratulations!</string>

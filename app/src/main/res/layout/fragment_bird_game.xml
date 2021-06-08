@@ -126,6 +126,15 @@
                     android:layout_marginBottom="0dp"
                     android:src="@drawable/mockup_circlebar" />
 
+                <ImageView
+                    android:id="@+id/imageView14"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="26dp"
+                    android:layout_marginEnd="28dp"
+                    android:src="@drawable/zen_brush_symbol" />
+
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView

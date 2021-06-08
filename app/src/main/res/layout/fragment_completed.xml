@@ -29,7 +29,7 @@
             app:srcCompat="@drawable/mockup_completedbgbottom" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/completedOnwardTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -225,14 +225,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/completedHeaderTV"
             android:layout_width="210dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/bungee_inline"
             android:includeFontPadding="false"
             android:lineSpacingExtra="4dp"
-            android:text="@string/birdgame_completed"
             android:textAlignment="center"
             android:textColor="#A6000000"
             android:textSize="16dp"
