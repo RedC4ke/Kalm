@@ -23,6 +23,7 @@
 
     <!-- find a dog -->
     <string name="findgame_title">Find all doggos!</string>
+    <string name="findgame_completed">Heck, you are eagle-eyed!</string>
 
     <!-- completed -->
     <string name="completed">Congratulations!</string>
