@@ -17,7 +17,7 @@ class LandingFragment : BaseFragment<FragmentLandingBinding>() {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentLandingBinding
         get() = FragmentLandingBinding::inflate
     private val destinationList = arrayListOf(
-        R.id.action_BirdGame
+        R.id.action_WordGame
     )
 
     override fun onStart() {

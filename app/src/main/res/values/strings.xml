@@ -25,6 +25,15 @@
     <string name="findgame_title">Find all doggos!</string>
     <string name="findgame_completed">Heck, you are eagle-eyed!</string>
 
+    <!-- word game - max word length is 7 -->
+    <string name="wordgame_head">You are</string>
+    <string-array name="wordgame_words">
+        <item>LOVED</item>
+        <item>AMAZING</item>
+        <item>VALID</item>
+    </string-array>
+    <string name="wordgame_completed">spread some self-love</string>
+
     <!-- completed -->
     <string name="completed">Congratulations!</string>
     <string name="completed_stat_taskscurrent">Tasks this run: </string>
