@@ -48,6 +48,10 @@ class CompletedFragment(private val header: String, private val gameFragment: Ga
         binding.comppletedBGHeadCL.bringToFront()
 
         binding.completedHeaderTV.text = header
+        val prefs = requireActivity().getPreferences(Context.MODE_PRIVATE)
+        binding.completedTasksThisRunTV.text = prefs.getInt("tasksThisRun", 0).toString()
+        binding.completedTasksOverallV.text = prefs.getInt("tasksOverall", 0).toString()
+        binding.completedAppLaunchesTV.text = prefs.getInt("appLaunches", 0).toString()
 
         binding.completedOnwardTV.setOnClickListener {
 

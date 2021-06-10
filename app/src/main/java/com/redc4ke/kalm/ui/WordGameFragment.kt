@@ -81,7 +81,10 @@ class WordGameFragment : GameFragment<FragmentWordGameBinding>() {
                             if (item == character) {
                                 score += 1
                                 currentEmptyLeaf = v
-                                if (score == word.size) winner()
+                                if (score == word.size) winner(
+                                    getString(R.string.wordgame_completed),
+                                    wordgameConfettiKV
+                                )
 
                                 true
                             } else {
@@ -115,27 +118,5 @@ class WordGameFragment : GameFragment<FragmentWordGameBinding>() {
         }
 
         super.onViewCreated(view, savedInstanceState)
-    }
-
-    private fun winner() {
-
-        binding.wordgameConfettiKV.build()
-            .addColors(Color.YELLOW, Color.GREEN, Color.MAGENTA)
-            .setDirection(0.0, 359.0)
-            .setSpeed(1f, 5f)
-            .setFadeOutEnabled(true)
-            .setTimeToLive(2000L)
-            .addShapes(Shape.Square, Shape.Circle)
-            .addSizes(Size(12))
-            .setPosition(
-                -50f,
-                binding.wordgameConfettiKV.width + 50f,
-                -50f,
-                -50f
-            )
-            .streamFor(300, 5000L)
-
-        CompletedFragment(getString(R.string.wordgame_completed), this)
-            .show(parentFragmentManager, "completed")
     }
 }

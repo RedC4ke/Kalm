@@ -5,13 +5,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.AttributeSet
 import android.view.View
+import androidx.core.content.edit
 import com.redc4ke.kalm.R
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val prefs = getPreferences(Context.MODE_PRIVATE)
+        val appLaunches = prefs.getInt("appLaunches", 0)
+        prefs.edit {
+            putInt("appLaunches", appLaunches + 1)
+        }
     }
 
     override fun onResume() {
