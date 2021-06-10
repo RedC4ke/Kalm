@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.DecelerateInterpolator
+import androidx.navigation.fragment.findNavController
 import com.redc4ke.kalm.R
 import com.redc4ke.kalm.databinding.FragmentBirdGameBinding
 import com.redc4ke.kalm.ui.base.GameFragment
@@ -26,7 +27,9 @@ class BirdGameFragment : GameFragment<FragmentBirdGameBinding>() {
     private var draggedColor: String? = null
     private var score = 0
     override val directions = arrayOf(
-        R.id.action_BirdGame_DrawGame
+        R.id.action_BirdGame_DrawGame,
+        R.id.action_BirdGame_FindGame,
+        R.id.action_BirdGame_WordGame
     )
 
     @SuppressLint("ClickableViewAccessibility")
@@ -35,6 +38,8 @@ class BirdGameFragment : GameFragment<FragmentBirdGameBinding>() {
 
         //Show the title banner
         showTitle()
+
+        reload(binding.reloadbtCV)
 
         val birbs = arrayListOf(
             Bird(binding.birdgameBirdRedIV, "Red"),

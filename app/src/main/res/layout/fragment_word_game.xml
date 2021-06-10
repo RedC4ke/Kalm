@@ -447,6 +447,37 @@
         </FrameLayout>
     </RelativeLayout>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/reloadbtCV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:translationX="-80dp"
+        android:translationY="80dp"
+        app:cardCornerRadius="80dp"
+        app:cardElevation="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/gameCircleBarLeftIV"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginBottom="0dp"
+            android:src="@drawable/mockup_circlebar" />
+
+        <ImageView
+            android:id="@+id/imageView14"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="28dp"
+            android:src="@drawable/zen_brush_symbol" />
+
+    </androidx.cardview.widget.CardView>
+
     <nl.dionsegijn.konfetti.KonfettiView
         android:id="@+id/wordgameConfettiKV"
         android:layout_width="match_parent"

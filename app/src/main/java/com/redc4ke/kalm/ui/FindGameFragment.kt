@@ -17,8 +17,11 @@ class FindGameFragment : GameFragment<FragmentFindGameBinding>() {
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentFindGameBinding
         get() = FragmentFindGameBinding::inflate
-    override val directions: Array<Int>
-        get() = arrayOf()
+    override val directions = arrayOf(
+        R.id.action_FindGame_BirdGame,
+        R.id.action_FindGame_WordGame,
+        R.id.action_FindGame_DrawGame
+    )
     private var score = 0
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -26,6 +29,8 @@ class FindGameFragment : GameFragment<FragmentFindGameBinding>() {
 
         with(binding) {
             findgameTitleTV.text = getString(R.string.findgame_title)
+
+            reload(reloadbtCV)
 
             var isFirst = false
             val dogList = mapOf(
@@ -73,6 +78,7 @@ class FindGameFragment : GameFragment<FragmentFindGameBinding>() {
                                     duration = 500
                                     start()
                                 }
+                            isFirst = !isFirst
                         }
                         ObjectAnimator
                             .ofFloat(dogIconList[entry.key], "alpha", 100f)

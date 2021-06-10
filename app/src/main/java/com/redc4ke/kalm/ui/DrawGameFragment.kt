@@ -17,7 +17,9 @@ class DrawGameFragment() : GameFragment<FragmentDrawGameBinding>() {
         get() = FragmentDrawGameBinding::inflate
     override val directions: Array<Int>
         get() = arrayOf(
-            R.id.action_DrawGame_FindGame
+            R.id.action_DrawGame_FindGame,
+            R.id.action_DrawGame_WordGame,
+            R.id.action_DrawGame_BirdGame
         )
     private lateinit var titles: Array<String>
 
@@ -31,6 +33,7 @@ class DrawGameFragment() : GameFragment<FragmentDrawGameBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        reload(binding.reloadbtCV)
         binding.drawgameTitleTV.text = titles.random()
         showTitle()
         buttonsSetup()

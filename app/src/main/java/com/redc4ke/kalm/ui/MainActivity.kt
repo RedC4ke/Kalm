@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         val appLaunches = prefs.getInt("appLaunches", 0)
         prefs.edit {
             putInt("appLaunches", appLaunches + 1)
+            putInt("tasksThisRun", 0)
         }
     }
 

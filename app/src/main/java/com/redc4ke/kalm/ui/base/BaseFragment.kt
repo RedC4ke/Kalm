@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.edit
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.redc4ke.kalm.R
 import com.redc4ke.kalm.ui.CompletedFragment
@@ -69,6 +70,12 @@ abstract class GameFragment<VB: ViewBinding> : BaseFragment<VB>() {
 
         CompletedFragment(string, this)
             .show(parentFragmentManager, "completed")
+    }
+
+    fun reload(view: View) {
+        view.setOnClickListener {
+            this.findNavController().navigate(directions.random())
+        }
     }
 
 }

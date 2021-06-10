@@ -23,8 +23,11 @@ class WordGameFragment : GameFragment<FragmentWordGameBinding>() {
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentWordGameBinding
         get() = FragmentWordGameBinding::inflate
-    override val directions: Array<Int>
-        get() = arrayOf()
+    override val directions = arrayOf(
+        R.id.action_WordGame_FindGame,
+        R.id.action_WordGame_DrawGame,
+        R.id.action_WordGame_BirdGame
+    )
     private var draggedView: View? = null
     private var score = 0
 
@@ -33,6 +36,8 @@ class WordGameFragment : GameFragment<FragmentWordGameBinding>() {
         val word = resources.getStringArray(R.array.wordgame_words).random().toCharArray()
 
         with(binding) {
+            reload(reloadbtCV)
+
             val allLeaves = arrayOf(leaf1FL, leaf2FL, leaf3FL, leaf4FL, leaf5FL, leaf6FL, leaf7FL)
             val allEmptyLeaves = wordgameEmptyLeavesLL.children.toList()
             allLeaves.shuffle()
@@ -40,7 +45,7 @@ class WordGameFragment : GameFragment<FragmentWordGameBinding>() {
             val currentEmptyLeaves = allEmptyLeaves.take(word.size)
             var currentEmptyLeaf: View? = null
 
-            for (i in (0 until word.size)) {
+            for (i in (word.indices)) {
                 val leaf = currentLeaves[i]
                 val emptyLeaf = currentEmptyLeaves[i]
                 leaf.visibility = View.VISIBLE
@@ -79,6 +84,7 @@ class WordGameFragment : GameFragment<FragmentWordGameBinding>() {
                         DragEvent.ACTION_DROP -> {
                             val item = event.clipData.getItemAt(0).text
                             if (item == character) {
+                                draggedView?.setOnTouchListener { _, _ ->  true}
                                 score += 1
                                 currentEmptyLeaf = v
                                 if (score == word.size) winner(

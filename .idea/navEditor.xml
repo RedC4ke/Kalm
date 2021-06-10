@@ -13,13 +13,23 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="12" />
-                            <option name="y" value="12" />
+                            <option name="x" value="269" />
+                            <option name="y" value="873" />
                           </Point>
                         </option>
                         <option name="myPositions">
                           <map>
                             <entry key="action_BirdGame_DrawGame">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_BirdGame_FindGame">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_BirdGame_WordGame">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -34,8 +44,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="276" />
-                            <option name="y" value="190" />
+                            <option name="x" value="279" />
+                            <option name="y" value="81" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -50,6 +60,11 @@
                                 <LayoutPositions />
                               </value>
                             </entry>
+                            <entry key="action_DrawGame_WordGame">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                           </map>
                         </option>
                       </LayoutPositions>
@@ -60,9 +75,28 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="277" />
-                            <option name="y" value="499" />
+                            <option name="x" value="253" />
+                            <option name="y" value="489" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_FindGame_BirdGame">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_FindGame_DrawGame">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_FindGame_WordGame">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
@@ -72,8 +106,8 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="12" />
-                            <option name="y" value="12" />
+                            <option name="x" value="-453" />
+                            <option name="y" value="322" />
                           </Point>
                         </option>
                         <option name="myPositions">
@@ -84,6 +118,11 @@
                               </value>
                             </entry>
                             <entry key="action_DrawGame">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_FindGame">
                               <value>
                                 <LayoutPositions />
                               </value>
@@ -103,9 +142,28 @@
                       <LayoutPositions>
                         <option name="myPosition">
                           <Point>
-                            <option name="x" value="283" />
-                            <option name="y" value="-427" />
+                            <option name="x" value="255" />
+                            <option name="y" value="-296" />
                           </Point>
+                        </option>
+                        <option name="myPositions">
+                          <map>
+                            <entry key="action_WordGame_BirdGame">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_WordGame_DrawGame">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                            <entry key="action_WordGame_FindGame">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
+                          </map>
                         </option>
                       </LayoutPositions>
                     </value>
