@@ -6,7 +6,24 @@
     <!-- landing -->
     <string name="land_panik">Panik?</string>
     <string name="land_kalm">Kalm.</string>
-    <string name="land_info">Kalm. v0.0.1 \nRedc4ke 2021</string>
+    <string name="land_info">Kalm. v0.1.0 \nRedc4ke 2021</string>
+
+    <!-- info -->
+    <string name="info_assets">Assets by:</string>
+
+    <string name="info_author1">Freepik</string>
+    <string name="info_author2">brgfx</string>
+    <string name="info_author3">upklyak</string>
+    <string name="info_author4">studiogstock</string>
+    <string name="info_author5">pch.vector</string>
+    <string name="info_author6">macrovector</string>
+    <string name="info_author7">lifeforstock</string>
+
+    <string name="info_special">Special\nthanks to:</string>
+    <string name="info_specialauthor1">_cunningham</string>
+
+    <string name="info_music">Music: Bensound</string>
+    <string name="info_sound">Sound: jobro</string>
 
     <!-- birds -->
     <string name="birdgame_title">Save the birdies!</string>
@@ -18,12 +35,26 @@
         <item>Draw a sun</item>
         <item>Draw an egg</item>
         <item>Draw a rocket</item>
+        <item>Draw a cat</item>
+        <item>Draw an umbrella</item>
     </string-array>
     <string name="drawgame_completed">Your creation is a masterpiece</string>
 
     <!-- find a dog -->
     <string name="findgame_title">Find all doggos!</string>
     <string name="findgame_completed">Heck, you are eagle-eyed!</string>
+
+    <!-- word game - max word length is 7 -->
+    <string name="wordgame_head">You are</string>
+    <string-array name="wordgame_words">
+        <item>LOVED</item>
+        <item>VALID</item>
+        <item>NICE</item>
+        <item>HERO</item>
+        <item>KIND</item>
+        <item>SMART</item>
+    </string-array>
+    <string name="wordgame_completed">spread some self-love</string>
 
     <!-- completed -->
     <string name="completed">Congratulations!</string>

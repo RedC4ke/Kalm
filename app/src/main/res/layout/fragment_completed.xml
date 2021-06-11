@@ -44,19 +44,19 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/completedReloadBT"
             android:layout_width="50dp"
             android:layout_height="60dp"
             android:backgroundTint="#00FFFFFF"
             android:drawableTint="#00FFFFFF"
             android:foregroundTint="#00FFFFFF"
-            app:layout_constraintEnd_toStartOf="@+id/button3"
-            app:layout_constraintStart_toEndOf="@+id/button"
-            app:layout_constraintTop_toTopOf="@+id/button"
+            app:layout_constraintEnd_toStartOf="@+id/completedMusicBT"
+            app:layout_constraintStart_toEndOf="@+id/completedMenuBT"
+            app:layout_constraintTop_toTopOf="@+id/completedMenuBT"
             app:rippleColor="#FFFFFF" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/completedMenuBT"
             android:layout_width="50dp"
             android:layout_height="60dp"
             android:layout_marginStart="48dp"
@@ -70,7 +70,7 @@
             app:rippleColor="#FFFFFF" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/completedMusicBT"
             android:layout_width="50dp"
             android:layout_height="60dp"
             android:layout_marginEnd="48dp"
@@ -87,30 +87,29 @@
             android:id="@+id/imageView5"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            app:layout_constraintBottom_toBottomOf="@+id/button"
-            app:layout_constraintEnd_toEndOf="@+id/button"
-            app:layout_constraintStart_toStartOf="@+id/button"
-            app:layout_constraintTop_toTopOf="@+id/button"
+            app:layout_constraintBottom_toBottomOf="@+id/completedMenuBT"
+            app:layout_constraintEnd_toEndOf="@+id/completedMenuBT"
+            app:layout_constraintStart_toStartOf="@+id/completedMenuBT"
+            app:layout_constraintTop_toTopOf="@+id/completedMenuBT"
             app:srcCompat="@drawable/ic_baseline_menu_24" />
 
         <ImageView
-            android:id="@+id/imageView9"
+            android:id="@+id/completedMusicIV"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            app:layout_constraintBottom_toBottomOf="@+id/button3"
-            app:layout_constraintEnd_toEndOf="@+id/button3"
-            app:layout_constraintStart_toStartOf="@+id/button3"
-            app:layout_constraintTop_toTopOf="@+id/button3"
-            app:srcCompat="@drawable/ic_baseline_settings_24" />
+            app:layout_constraintBottom_toBottomOf="@+id/completedMusicBT"
+            app:layout_constraintEnd_toEndOf="@+id/completedMusicBT"
+            app:layout_constraintStart_toStartOf="@+id/completedMusicBT"
+            app:layout_constraintTop_toTopOf="@+id/completedMusicBT" />
 
         <ImageView
             android:id="@+id/imageView6"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            app:layout_constraintBottom_toBottomOf="@+id/button2"
-            app:layout_constraintEnd_toEndOf="@+id/button2"
-            app:layout_constraintStart_toStartOf="@+id/button2"
-            app:layout_constraintTop_toTopOf="@+id/button2"
+            app:layout_constraintBottom_toBottomOf="@+id/completedReloadBT"
+            app:layout_constraintEnd_toEndOf="@+id/completedReloadBT"
+            app:layout_constraintStart_toStartOf="@+id/completedReloadBT"
+            app:layout_constraintTop_toTopOf="@+id/completedReloadBT"
             app:srcCompat="@drawable/ic_baseline_refresh_24" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -182,6 +181,43 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/completedTasksThisRunTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:fontFamily="@font/gloria_hallelujah"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView10"
+            app:layout_constraintEnd_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/textView10"
+            tools:text="18" />
+
+        <TextView
+            android:id="@+id/completedTasksOverallV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gloria_hallelujah"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView7"
+            app:layout_constraintEnd_toEndOf="@+id/completedTasksThisRunTV"
+            app:layout_constraintTop_toTopOf="@+id/textView7"
+            tools:text="45" />
+
+        <TextView
+            android:id="@+id/completedAppLaunchesTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gloria_hallelujah"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textView8"
+            app:layout_constraintEnd_toEndOf="@+id/completedTasksOverallV"
+            app:layout_constraintTop_toTopOf="@+id/textView8"
+            tools:text="18" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -2,7 +2,6 @@ package com.redc4ke.kalm.ui
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +10,9 @@ import android.view.WindowManager
 import androidx.compose.animation.core.Spring
 import androidx.dynamicanimation.animation.DynamicAnimation
 import androidx.dynamicanimation.animation.SpringAnimation
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.redc4ke.kalm.R
 import com.redc4ke.kalm.databinding.FragmentCompletedBinding
 import com.redc4ke.kalm.ui.base.BaseDialogFragment
 import com.redc4ke.kalm.ui.base.GameFragment
@@ -23,7 +24,14 @@ class CompletedFragment(private val header: String, private val gameFragment: Ga
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentCompletedBinding
         get() = FragmentCompletedBinding::inflate
+    private lateinit var viewModel: MainViewModel
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        viewModel =
+            ViewModelProvider(requireActivity() as MainActivity).get(MainViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,16 +52,40 @@ class CompletedFragment(private val header: String, private val gameFragment: Ga
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.completedBGMiddleCL.bringToFront()
-        binding.comppletedBGHeadCL.bringToFront()
+        with(binding) {
+            completedBGMiddleCL.bringToFront()
+            comppletedBGHeadCL.bringToFront()
 
-        binding.completedHeaderTV.text = header
+            completedHeaderTV.text = header
+            val prefs = requireActivity().getPreferences(Context.MODE_PRIVATE)
+            completedTasksThisRunTV.text = prefs.getInt("tasksThisRun", 0).toString()
+            completedTasksOverallV.text = prefs.getInt("tasksOverall", 0).toString()
+            completedAppLaunchesTV.text = prefs.getInt("appLaunches", 0).toString()
 
-        binding.completedOnwardTV.setOnClickListener {
+            viewModel.isMusicEnabled().observe(viewLifecycleOwner, {
+                if (it) completedMusicIV.setImageResource(R.drawable.ic_baseline_music_note_24)
+                else completedMusicIV.setImageResource(R.drawable.ic_baseline_music_off_24)
+            })
+            completedMusicBT.setOnClickListener {
+                viewModel.change(requireActivity() as MainActivity)
+            }
 
-            dismiss()
-            gameFragment.findNavController().navigate(gameFragment.directions.random())
+            completedOnwardTV.setOnClickListener {
 
+                dismiss()
+                gameFragment.findNavController().navigate(gameFragment.directions.random())
+
+            }
+
+            completedReloadBT.setOnClickListener {
+                dismiss()
+                gameFragment.findNavController().navigate(gameFragment.reloadDirection)
+            }
+
+            completedMenuBT.setOnClickListener {
+                dismiss()
+                gameFragment.findNavController().navigate(R.id.landingFragment)
+            }
         }
 
         animate()

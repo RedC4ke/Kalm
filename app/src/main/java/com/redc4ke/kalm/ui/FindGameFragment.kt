@@ -1,7 +1,6 @@
 package com.redc4ke.kalm.ui
 
 import android.animation.ObjectAnimator
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,22 +12,64 @@ import androidx.core.animation.doOnEnd
 import com.redc4ke.kalm.R
 import com.redc4ke.kalm.databinding.FragmentFindGameBinding
 import com.redc4ke.kalm.ui.base.GameFragment
-import nl.dionsegijn.konfetti.models.Shape
-import nl.dionsegijn.konfetti.models.Size
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
 
 class FindGameFragment : GameFragment<FragmentFindGameBinding>() {
 
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentFindGameBinding
         get() = FragmentFindGameBinding::inflate
-    override val directions: Array<Int>
-        get() = arrayOf()
+    override val directions = arrayOf(
+        R.id.action_FindGame_BirdGame,
+        R.id.action_FindGame_WordGame,
+        R.id.action_FindGame_DrawGame
+    )
+    override val reloadDirection: Int
+        get() = R.id.action_findGameFragment_self
     private var score = 0
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //MainScope().launch(Dispatchers.IO) {
+        //    with(binding) {
+        //        val viewToResource = mapOf(
+        //            //dogs
+        //            findgameCorgiIV to R.drawable.mockup_findgamedog1,
+        //            findgameHuskyIV to R.drawable.mockup_findgamedog5,
+        //            findgameDachshundIV to R.drawable.mockup_findgamedog3,
+        //            findgameJrterrierIV to R.drawable.mockup_findgamedog2,
+        //            findgamePugIV to R.drawable.mockup_findgamedog4,
+        //            findgameTerrierIV to R.drawable.mockup_findgamedog6,
+        //            //dog icons
+        //            findgameCorgiIconIV to R.drawable.mockup_findgamecorgi,
+        //            findgameHuskyIconIV to R.drawable.mockup_findgamehusky,
+        //            findgameDachshundIconIV to R.drawable.mockup_findgamedachshund,
+        //            findgameJrterrierIconIV to R.drawable.mockup_findgamejrterrier,
+        //            findgamePugIconIV to R.drawable.mockup_findgamepug,
+        //            findgameTerrierIconIV to R.drawable.mockup_findgameterrier,
+        //            //trees
+        //            findgameTree1 to R.drawable.mockup_findgametree1,
+        //            findgameTree2 to R.drawable.mockup_findgametree2,
+        //            findgameTree3 to R.drawable.mockup_findgametree3,
+        //            //misc
+        //            findgameBalloonsIV to R.drawable.mockup_findgamebaloons,
+        //            findgameBenchIV to R.drawable.mockup_findgamebench,
+        //            findgameLeavesIV to R.drawable.mockup_findgameleavespile
+        //        )
+//
+        //        viewToResource.forEach { (t, u) ->
+        //            t.setImageResource(u)
+        //        }
+        //    }
+        //}
+
         with(binding) {
             findgameTitleTV.text = getString(R.string.findgame_title)
+
+            reload(reloadbtCV)
 
             var isFirst = false
             val dogList = mapOf(
@@ -76,6 +117,7 @@ class FindGameFragment : GameFragment<FragmentFindGameBinding>() {
                                     duration = 500
                                     start()
                                 }
+                            isFirst = !isFirst
                         }
                         ObjectAnimator
                             .ofFloat(dogIconList[entry.key], "alpha", 100f)
@@ -86,7 +128,7 @@ class FindGameFragment : GameFragment<FragmentFindGameBinding>() {
                     }
                     score += 1
                     if (score == 6) {
-                        winner()
+                        winner(getString(R.string.findgame_completed), findgameConfettiKV)
                     }
                 }
             }
@@ -120,26 +162,4 @@ class FindGameFragment : GameFragment<FragmentFindGameBinding>() {
             levitate(view, -y)
         }
     }
-
-    private fun winner() {
-        binding.findgameConfettiKV.build()
-            .addColors(Color.YELLOW, Color.GREEN, Color.MAGENTA)
-            .setDirection(0.0, 359.0)
-            .setSpeed(1f, 5f)
-            .setFadeOutEnabled(true)
-            .setTimeToLive(2000L)
-            .addShapes(Shape.Square, Shape.Circle)
-            .addSizes(Size(12))
-            .setPosition(
-                -50f,
-                binding.findgameConfettiKV.width + 50f,
-                -50f,
-                -50f
-            )
-            .streamFor(300, 5000L)
-
-        CompletedFragment(getString(R.string.findgame_completed), this)
-            .show(parentFragmentManager, "completed")
-    }
-
 }

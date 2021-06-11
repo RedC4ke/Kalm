@@ -12,19 +12,34 @@
         tools:layout="@layout/fragment_landing" >
         <action
             android:id="@+id/action_BirdGame"
-            app:destination="@id/birdGameFragment2" />
+            app:destination="@id/birdGameFragment" />
         <action
             android:id="@+id/action_DrawGame"
             app:destination="@id/drawGameFragment" />
+        <action
+            android:id="@+id/action_WordGame"
+            app:destination="@id/wordGameFragment" />
+        <action
+            android:id="@+id/action_FindGame"
+            app:destination="@id/findGameFragment" />
     </fragment>
     <fragment
-        android:id="@+id/birdGameFragment2"
+        android:id="@+id/birdGameFragment"
         android:name="com.redc4ke.kalm.ui.BirdGameFragment"
         android:label="fragment_bird_game"
         tools:layout="@layout/fragment_bird_game" >
         <action
             android:id="@+id/action_BirdGame_DrawGame"
             app:destination="@id/drawGameFragment" />
+        <action
+            android:id="@+id/action_BirdGame_WordGame"
+            app:destination="@id/wordGameFragment" />
+        <action
+            android:id="@+id/action_BirdGame_FindGame"
+            app:destination="@id/findGameFragment" />
+        <action
+            android:id="@+id/action_birdGameFragment_self"
+            app:destination="@id/birdGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/drawGameFragment"
@@ -32,13 +47,53 @@
         android:label="DrawGameFragment" >
         <action
             android:id="@+id/action_DrawGame_BirdGame"
-            app:destination="@id/birdGameFragment2" />
+            app:destination="@id/birdGameFragment" />
         <action
             android:id="@+id/action_DrawGame_FindGame"
             app:destination="@id/findGameFragment" />
+        <action
+            android:id="@+id/action_DrawGame_WordGame"
+            app:destination="@id/wordGameFragment" />
+        <action
+            android:id="@+id/action_drawGameFragment_self"
+            app:destination="@id/drawGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/findGameFragment"
         android:name="com.redc4ke.kalm.ui.FindGameFragment"
-        android:label="FindGameFragment" />
+        android:label="FindGameFragment" >
+        <action
+            android:id="@+id/action_FindGame_BirdGame"
+            app:destination="@id/birdGameFragment" />
+        <action
+            android:id="@+id/action_FindGame_DrawGame"
+            app:destination="@id/drawGameFragment" />
+        <action
+            android:id="@+id/action_FindGame_WordGame"
+            app:destination="@id/wordGameFragment" />
+        <action
+            android:id="@+id/action_findGameFragment_self"
+            app:destination="@id/findGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wordGameFragment"
+        android:name="com.redc4ke.kalm.ui.WordGameFragment"
+        android:label="WordGameFragment" >
+        <action
+            android:id="@+id/action_WordGame_DrawGame"
+            app:destination="@id/drawGameFragment" />
+        <action
+            android:id="@+id/action_WordGame_FindGame"
+            app:destination="@id/findGameFragment" />
+        <action
+            android:id="@+id/action_WordGame_BirdGame"
+            app:destination="@id/birdGameFragment" />
+        <action
+            android:id="@+id/action_wordGameFragment_self"
+            app:destination="@id/wordGameFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/informationFragment"
+        android:name="com.redc4ke.kalm.ui.InformationFragment"
+        android:label="InformationFragment" />
 </navigation>

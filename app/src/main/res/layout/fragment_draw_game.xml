@@ -61,6 +61,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/reloadbtCV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:translationX="-80dp"
