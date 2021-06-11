@@ -8,28 +8,42 @@
     android:orientation="vertical"
     tools:context=".ui.LandingFragment" >
 
-    <TextView
-        android:id="@+id/land_panik"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:fontFamily="@font/bowlby_one"
-        android:text="@string/land_panik"
-        android:textAlignment="center"
-        android:textColor="#A6000000"
-        android:textSize="86sp"
-        android:visibility="gone" />
+        android:layout_gravity="center">
 
-    <TextView
-        android:id="@+id/land_panik2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:fontFamily="@font/gloria_hallelujah"
-        android:text="@string/land_kalm"
-        android:textAlignment="center"
-        android:textColor="#A6000000"
-        android:textSize="116sp" />
+        <TextView
+            android:id="@+id/land_panik"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gloria_hallelujah"
+            android:includeFontPadding="false"
+            android:text="@string/land_panik"
+            android:textAlignment="center"
+            android:textColor="#A6000000"
+            android:textSize="116sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/land_kalm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gloria_hallelujah"
+            android:text="@string/land_kalm"
+            android:textAlignment="center"
+            android:textColor="#A6000000"
+            android:textSize="116sp"
+            android:translationX="-500dp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -63,13 +77,42 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/textView2"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="18dp"
-        android:fontFamily="@font/gloria_hallelujah"
-        android:text="@string/land_info"
-        android:textAlignment="center"
-        android:textSize="14sp" />
+        android:layout_gravity="bottom|center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/landingMusicBT"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_music_note_24"
+            app:tint="#A6000000" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="18dp"
+            android:layout_weight="4"
+            android:fontFamily="@font/gloria_hallelujah"
+            android:text="@string/land_info"
+            android:textAlignment="center"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/landingInfoBT"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="12dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_help_outline_24"
+            app:tint="#A6000000" />
+    </LinearLayout>
+
 </LinearLayout>

@@ -21,6 +21,8 @@ class DrawGameFragment() : GameFragment<FragmentDrawGameBinding>() {
             R.id.action_DrawGame_WordGame,
             R.id.action_DrawGame_BirdGame
         )
+    override val reloadDirection: Int
+        get() = R.id.action_drawGameFragment_self
     private lateinit var titles: Array<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -2,16 +2,22 @@ package com.redc4ke.kalm.ui.base
 
 import android.content.Context
 import android.graphics.Color
+import android.media.AudioAttributes
+import android.media.SoundPool
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.edit
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
+import com.google.android.material.transition.MaterialFadeThrough
 import com.redc4ke.kalm.R
 import com.redc4ke.kalm.ui.CompletedFragment
+import com.redc4ke.kalm.ui.MainActivity
+import com.redc4ke.kalm.ui.MainViewModel
 import nl.dionsegijn.konfetti.KonfettiView
 import nl.dionsegijn.konfetti.models.Shape
 import nl.dionsegijn.konfetti.models.Size
@@ -30,6 +36,11 @@ abstract class BaseFragment<VB: ViewBinding>: Fragment() {
     ): View? {
         _binding = bindingInflater.invoke(inflater, container, false)
 
+        enterTransition = MaterialFadeThrough()
+        exitTransition = MaterialFadeThrough()
+        reenterTransition = MaterialFadeThrough()
+        returnTransition = MaterialFadeThrough()
+
         return binding.root
     }
 
@@ -42,6 +53,22 @@ abstract class BaseFragment<VB: ViewBinding>: Fragment() {
 abstract class GameFragment<VB: ViewBinding> : BaseFragment<VB>() {
 
     abstract val directions: Array<Int>
+    abstract val reloadDirection: Int
+    private val attrs = AudioAttributes.Builder()
+        .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+        .setUsage(AudioAttributes.USAGE_GAME)
+        .build()
+    private val soundPool = SoundPool.Builder()
+        .setAudioAttributes(attrs)
+        .build()
+    private var winSound = 0
+    private lateinit var viewModel: MainViewModel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        winSound = soundPool.load(context, R.raw.ez_win, 1)
+        viewModel = ViewModelProvider(activity as MainActivity)[MainViewModel::class.java]
+    }
 
     fun winner(string: String, confetti: KonfettiView) {
         confetti.build()
@@ -70,6 +97,10 @@ abstract class GameFragment<VB: ViewBinding> : BaseFragment<VB>() {
 
         CompletedFragment(string, this)
             .show(parentFragmentManager, "completed")
+
+        if (viewModel.isMusicEnabled().value != false) {
+            soundPool.play(winSound, 1.0f, 1.0f, 1, 0, 1f)
+        }
     }
 
     fun reload(view: View) {

@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_BirdGame_FindGame"
             app:destination="@id/findGameFragment" />
+        <action
+            android:id="@+id/action_birdGameFragment_self"
+            app:destination="@id/birdGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/drawGameFragment"
@@ -51,6 +54,9 @@
         <action
             android:id="@+id/action_DrawGame_WordGame"
             app:destination="@id/wordGameFragment" />
+        <action
+            android:id="@+id/action_drawGameFragment_self"
+            app:destination="@id/drawGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/findGameFragment"
@@ -65,6 +71,9 @@
         <action
             android:id="@+id/action_FindGame_WordGame"
             app:destination="@id/wordGameFragment" />
+        <action
+            android:id="@+id/action_findGameFragment_self"
+            app:destination="@id/findGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/wordGameFragment"
@@ -79,5 +88,12 @@
         <action
             android:id="@+id/action_WordGame_BirdGame"
             app:destination="@id/birdGameFragment" />
+        <action
+            android:id="@+id/action_wordGameFragment_self"
+            app:destination="@id/wordGameFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/informationFragment"
+        android:name="com.redc4ke.kalm.ui.InformationFragment"
+        android:label="InformationFragment" />
 </navigation>

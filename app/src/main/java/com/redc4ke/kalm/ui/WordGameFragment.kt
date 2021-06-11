@@ -28,6 +28,8 @@ class WordGameFragment : GameFragment<FragmentWordGameBinding>() {
         R.id.action_WordGame_DrawGame,
         R.id.action_WordGame_BirdGame
     )
+    override val reloadDirection: Int
+        get() = R.id.action_wordGameFragment_self
     private var draggedView: View? = null
     private var score = 0
 

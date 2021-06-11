@@ -31,6 +31,7 @@ class BirdGameFragment : GameFragment<FragmentBirdGameBinding>() {
         R.id.action_BirdGame_FindGame,
         R.id.action_BirdGame_WordGame
     )
+    override val reloadDirection = R.id.action_birdGameFragment_self
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
