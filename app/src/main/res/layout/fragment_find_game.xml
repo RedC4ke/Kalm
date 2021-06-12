@@ -199,8 +199,7 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="3dp"
-                    android:alpha="0"
-                    android:visibility="visible"
+                    android:alpha="0.1"
                     app:srcCompat="@drawable/mockup_findgamepug"
                     tools:visibility="visible" />
 
@@ -209,8 +208,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginBottom="3dp"
-                    android:alpha="0"
-                    android:visibility="visible"
+                    android:alpha="0.1"
                     app:srcCompat="@drawable/mockup_findgamecorgi"
                     tools:visibility="visible" />
 
@@ -219,8 +217,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginBottom="3dp"
-                    android:alpha="0"
-                    android:visibility="visible"
+                    android:alpha="0.1"
                     app:srcCompat="@drawable/mockup_findgamejrterrier"
                     tools:visibility="visible" />
 
@@ -229,8 +226,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginBottom="3dp"
-                    android:alpha="0"
-                    android:visibility="visible"
+                    android:alpha="0.1"
                     app:srcCompat="@drawable/mockup_findgameterrier"
                     tools:visibility="visible" />
 
@@ -239,8 +235,7 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginBottom="3dp"
-                    android:alpha="0"
-                    android:visibility="visible"
+                    android:alpha="0.1"
                     app:srcCompat="@drawable/mockup_findgamedachshund"
                     tools:visibility="visible" />
 
@@ -249,10 +244,8 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_marginBottom="3dp"
-                    android:alpha="0"
-                    android:visibility="visible"
-                    app:srcCompat="@drawable/mockup_findgamehusky"
-                    tools:visibility="visible" />
+                    android:alpha="0.1"
+                    app:srcCompat="@drawable/mockup_findgamehusky" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -299,4 +292,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:visibility="gone"/>
+
 </FrameLayout>
